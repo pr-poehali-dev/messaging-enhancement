@@ -52,7 +52,7 @@ const Index = () => {
         return (
           <div className="space-y-4">
             <div className="flex items-center justify-between">
-              <h2 className="text-2xl font-bold text-gray-800">Чаты</h2>
+              <h2 className="text-2xl font-bold text-white">Чаты</h2>
               <Button size="sm" className="bg-game-orange hover:bg-orange-600 text-white">
                 <Icon name="Plus" size={16} />
               </Button>
@@ -72,10 +72,10 @@ const Index = () => {
                       </div>
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center justify-between">
-                          <h3 className="font-semibold text-gray-900 truncate">{chat.name}</h3>
-                          <span className="text-xs text-gray-500">{chat.time}</span>
+                          <h3 className="font-semibold text-white truncate">{chat.name}</h3>
+                          <span className="text-xs text-gray-400">{chat.time}</span>
                         </div>
-                        <p className="text-sm text-gray-600 truncate">{chat.lastMessage}</p>
+                        <p className="text-sm text-gray-300 truncate">{chat.lastMessage}</p>
                       </div>
                       {chat.unread > 0 && (
                         <Badge className="bg-game-orange text-white animate-bounce-in">
@@ -94,7 +94,7 @@ const Index = () => {
         return (
           <div className="space-y-4">
             <div className="flex items-center justify-between">
-              <h2 className="text-2xl font-bold text-gray-800">Лента новостей</h2>
+              <h2 className="text-2xl font-bold text-white">Лента новостей</h2>
               <Button size="sm" className="bg-game-teal hover:bg-teal-600 text-white">
                 <Icon name="PlusCircle" size={16} />
               </Button>
@@ -109,10 +109,10 @@ const Index = () => {
                       </Avatar>
                       <div className="flex-1">
                         <div className="flex items-center gap-2 mb-2">
-                          <h4 className="font-semibold text-gray-900">{post.author}</h4>
-                          <span className="text-xs text-gray-500">{post.time}</span>
+                          <h4 className="font-semibold text-white">{post.author}</h4>
+                          <span className="text-xs text-gray-400">{post.time}</span>
                         </div>
-                        <p className="text-gray-700 mb-3">{post.content}</p>
+                        <p className="text-gray-300 mb-3">{post.content}</p>
                         <div className="flex items-center gap-4">
                           <Button variant="ghost" size="sm" className="text-game-orange hover:text-orange-600">
                             <Icon name="Heart" size={16} />
@@ -139,7 +139,7 @@ const Index = () => {
         return (
           <div className="space-y-4">
             <div className="flex items-center justify-between">
-              <h2 className="text-2xl font-bold text-gray-800">История звонков</h2>
+              <h2 className="text-2xl font-bold text-white">История звонков</h2>
               <Button size="sm" className="bg-game-green hover:bg-green-700 text-white">
                 <Icon name="PhonePlus" size={16} />
               </Button>
@@ -154,14 +154,14 @@ const Index = () => {
                       </Avatar>
                       <div className="flex-1">
                         <div className="flex items-center gap-2">
-                          <h3 className="font-semibold text-gray-900">{call.name}</h3>
+                          <h3 className="font-semibold text-white">{call.name}</h3>
                           <Icon 
                             name={call.type === 'outgoing' ? 'PhoneOutgoing' : 'PhoneIncoming'} 
                             size={14} 
                             className={call.status === 'missed' ? 'text-red-500' : 'text-green-500'} 
                           />
                         </div>
-                        <div className="flex items-center gap-2 text-sm text-gray-600">
+                        <div className="flex items-center gap-2 text-sm text-gray-300">
                           <span>{call.time}</span>
                           <span>•</span>
                           <span>{call.duration}</span>
@@ -181,7 +181,7 @@ const Index = () => {
       case 'status':
         return (
           <div className="space-y-4">
-            <h2 className="text-2xl font-bold text-gray-800">Статусы</h2>
+            <h2 className="text-2xl font-bold text-white">Статусы</h2>
             <div className="space-y-3">
               {statuses.map((status) => (
                 <Card key={status.id} className={`hover-scale cursor-pointer animate-fade-in ${status.isOwn ? 'border-game-orange' : ''}`}>
@@ -198,14 +198,14 @@ const Index = () => {
                         )}
                       </div>
                       <div className="flex-1">
-                        <h3 className="font-semibold text-gray-900">{status.name}</h3>
-                        <p className="text-sm text-gray-600">{status.content}</p>
+                        <h3 className="font-semibold text-white">{status.name}</h3>
+                        <p className="text-sm text-gray-300">{status.content}</p>
                         <div className="flex items-center gap-2 mt-1">
-                          <span className="text-xs text-gray-500">{status.time}</span>
+                          <span className="text-xs text-gray-400">{status.time}</span>
                           {!status.isOwn && (
                             <>
                               <span className="text-xs text-gray-400">•</span>
-                              <span className="text-xs text-gray-500">{status.views} просмотров</span>
+                              <span className="text-xs text-gray-400">{status.views} просмотров</span>
                             </>
                           )}
                         </div>
@@ -228,12 +228,12 @@ const Index = () => {
                     <AvatarFallback className="text-4xl">🧑‍🚀</AvatarFallback>
                   </Avatar>
                   <div>
-                    <h2 className="text-2xl font-bold text-gray-900">Космический Путешественник</h2>
-                    <p className="text-gray-600">@space_explorer</p>
+                    <h2 className="text-2xl font-bold text-white">Космический Путешественник</h2>
+                    <p className="text-gray-300">@space_explorer</p>
                   </div>
                   <div className="flex items-center justify-center gap-2">
                     <div className={`w-3 h-3 rounded-full ${onlineStatus ? 'bg-green-500' : 'bg-gray-400'} animate-pulse`}></div>
-                    <span className="text-sm text-gray-600">
+                    <span className="text-sm text-gray-300">
                       {onlineStatus ? 'В сети' : 'Не в сети'}
                     </span>
                   </div>
@@ -249,23 +249,23 @@ const Index = () => {
             
             <Card className="animate-fade-in">
               <CardContent className="p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">Статистика</h3>
+                <h3 className="text-lg font-semibold text-white mb-4">Статистика</h3>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="text-center p-4 bg-game-orange/10 rounded-lg">
                     <div className="text-2xl font-bold text-game-orange">127</div>
-                    <div className="text-sm text-gray-600">Сообщений</div>
+                    <div className="text-sm text-gray-300">Сообщений</div>
                   </div>
                   <div className="text-center p-4 bg-game-blue/10 rounded-lg">
                     <div className="text-2xl font-bold text-game-blue">45</div>
-                    <div className="text-sm text-gray-600">Звонков</div>
+                    <div className="text-sm text-gray-300">Звонков</div>
                   </div>
                   <div className="text-center p-4 bg-game-teal/10 rounded-lg">
                     <div className="text-2xl font-bold text-game-teal">89</div>
-                    <div className="text-sm text-gray-600">Контактов</div>
+                    <div className="text-sm text-gray-300">Контактов</div>
                   </div>
                   <div className="text-center p-4 bg-game-purple/10 rounded-lg">
                     <div className="text-2xl font-bold text-game-purple">12</div>
-                    <div className="text-sm text-gray-600">Групп</div>
+                    <div className="text-sm text-gray-300">Групп</div>
                   </div>
                 </div>
               </CardContent>
@@ -276,12 +276,12 @@ const Index = () => {
       default:
         return (
           <div className="space-y-4">
-            <h2 className="text-2xl font-bold text-gray-800 capitalize">{activeTab}</h2>
+            <h2 className="text-2xl font-bold text-white capitalize">{activeTab}</h2>
             <Card className="animate-scale-in">
               <CardContent className="p-8 text-center">
                 <Icon name="Rocket" size={48} className="mx-auto text-game-orange mb-4" />
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Скоро здесь будет контент!</h3>
-                <p className="text-gray-600">Этот раздел находится в разработке</p>
+                <h3 className="text-xl font-semibold text-white mb-2">Скоро здесь будет контент!</h3>
+                <p className="text-gray-300">Этот раздел находится в разработке</p>
               </CardContent>
             </Card>
           </div>
@@ -290,9 +290,9 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-orange-50">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
       {/* Header */}
-      <header className="bg-white/80 backdrop-blur-md border-b border-gray-200 sticky top-0 z-50">
+      <header className="bg-gray-900/80 backdrop-blur-md border-b border-gray-700 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
@@ -300,7 +300,7 @@ const Index = () => {
                 <Icon name="MessageCircle" size={20} className="text-white" />
               </div>
               <h1 className="text-xl font-bold bg-gradient-to-r from-game-orange to-game-purple bg-clip-text text-transparent">
-                GameChat
+                ConnectX
               </h1>
             </div>
             <div className="flex items-center gap-3">
@@ -332,7 +332,7 @@ const Index = () => {
                       className={`w-full justify-start gap-3 hover-scale ${
                         activeTab === item.id 
                           ? 'bg-gradient-to-r from-game-orange to-game-purple text-white' 
-                          : 'text-gray-700 hover:text-gray-900'
+                          : 'text-gray-300 hover:text-white'
                       }`}
                       onClick={() => setActiveTab(item.id)}
                     >
@@ -360,7 +360,7 @@ const Index = () => {
       </div>
 
       {/* Bottom Message Input (for mobile) */}
-      <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-white/90 backdrop-blur-md border-t border-gray-200 p-4">
+      <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-gray-900/90 backdrop-blur-md border-t border-gray-700 p-4">
         <div className="flex items-center gap-2">
           <Input placeholder="Написать сообщение..." className="flex-1" />
           <Button size="sm" className="bg-game-orange text-white">
